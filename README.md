@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# kevin_services
-=======
 # Project Name
 
 > Project description
@@ -39,4 +36,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
->>>>>>> 418fe41181558d2a50b3ec65b5dd40ff0010f325
