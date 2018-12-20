@@ -10,11 +10,12 @@ class App extends Component {
   }
 
   render() {
+    const { teams } = this.state;
     return (
       <div>
         <ul>
           <b>Team:</b>
-          {this.state.teams.map(team => (
+          {teams.map(team => (
             <div key={team.id}>
               <li>{team.team_name}</li>
               <ul>

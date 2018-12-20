@@ -8,6 +8,7 @@ app.use(express.static(`${__dirname}/../client/dist`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+console.log(`this is db: ${db}`);
 
 const port = 3000;
 
