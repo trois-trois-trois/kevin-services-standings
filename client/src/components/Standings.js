@@ -17,7 +17,7 @@ export default class Standings extends Component {
     return (
       <div className="container-fluid">
         <h5>2018 NFC West Standings</h5>
-        <table className="table table-striped table-hover table-sm">
+        <table className="table table-striped table-hover table-sm rounded">
           <thead>
             <tr>
               <th scope="col">Team</th>
