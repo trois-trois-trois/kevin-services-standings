@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Standings from './components/Standings';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Standings />, document.getElementById('app'));

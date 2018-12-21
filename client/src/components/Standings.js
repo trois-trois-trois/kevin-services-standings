@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import mockTeamData from './mockTeamData';
+import mockTeamData from '../mockTeamData';
 
-class App extends Component {
+export default class Standings extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +11,7 @@ class App extends Component {
 
   render() {
     const { teams } = this.state;
+
     return (
       <div>
         <ul>
@@ -30,5 +31,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
