@@ -11,8 +11,7 @@ export default class Standings extends Component {
 
   render() {
     const { teams } = this.state;
-    const nfcWestTeams = teams.filter(team => team['division '] === 'NFC WEST').sort((a, b) => b.wins - a.wins);
-
+    const nfcWestTeams = teams.filter(team => team.division === 'NFC WEST').sort((a, b) => b.wins - a.wins);
 
     return (
       <div className="container-fluid">
