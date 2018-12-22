@@ -101,7 +101,7 @@ const mockTeamData = [
 ];
 
 const importMockTeamData = () => {
-  Standings.create(mockTeamData).then(() => db.close());
+  Standings.create(mockTeamData).then(() => db.disconnect());
 };
 
 importMockTeamData();
