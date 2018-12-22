@@ -21,7 +21,7 @@ const standingsSchema = mongoose.Schema({
   points_against: Number,
 });
 
-const StandingsModel = mongoose.model('StandingsModel', standingsSchema);
+const Standings = mongoose.model('Standings', standingsSchema);
 
 module.exports = db;
-module.exports = StandingsModel;
+module.exports = Standings;

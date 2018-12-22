@@ -6,7 +6,7 @@
   "scripts": {
     "react": "webpack -d --watch",
     "server": "nodemon server/index.js rs",
-    "dbsetup": "node database/seed.js"
+    "seed": "node database/seed.js"
   },
   "author": "Beth Johnson",
   "license": "ISC",

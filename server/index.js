@@ -12,18 +12,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 console.log(`this is db: ${db}`);
 
-const testEntry = new StandingsModel({
-  team_name: 'JKR Hackers',
-  division: 'XFL ALL',
-  wins: 16,
-  losses: 0,
-  tie: 0,
-  percentage: 100,
-  points_for: 1500,
-  points_against: 200,
-});
+// const testEntry = new StandingsModel({
+//   team_name: 'JKR Hackers',
+//   division: 'XFL ALL',
+//   wins: 16,
+//   losses: 0,
+//   tie: 0,
+//   percentage: 100,
+//   points_for: 1500,
+//   points_against: 200,
+// });
 
-testEntry.save();
+// testEntry.save();
 
 const port = 3000;
 

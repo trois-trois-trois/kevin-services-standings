@@ -1,5 +1,5 @@
 const db = require('./index');
-const StandingsModel = require('./index');
+const Standings = require('./index');
 
 const mockTeamData = [
   {
@@ -101,7 +101,7 @@ const mockTeamData = [
 ];
 
 const importMockTeamData = () => {
-  StandingsModel.create(mockTeamData).then(() => db.disconnect());
+  Standings.create(mockTeamData).then(() => db.close());
 };
 
 importMockTeamData();
