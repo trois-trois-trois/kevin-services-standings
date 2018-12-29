@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/standings');
+mongoose.connect('mongodb://localhost/espn/standings', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -8,8 +8,8 @@ db.once('open', () => {
   console.log('MongoDB has connected');
 });
 
-module.exports = mongoose.model('StandingsModel', {
-  team_name: String,
+const standingsSchema = mongoose.Schema({
+  team_name: { type: String, unique: true },
   division: String,
   wins: Number,
   losses: Number,
@@ -19,4 +19,7 @@ module.exports = mongoose.model('StandingsModel', {
   points_against: Number,
 });
 
+const Standings = mongoose.model('Standings', standingsSchema);
+
 module.exports = db;
+module.exports = Standings;
