@@ -8,8 +8,6 @@ db.once('open', () => {
   console.log('MongoDB has connected');
 });
 
-mongoose.Promise = global.Promise;
-
 const standingsSchema = mongoose.Schema({
   team_name: { type: String, unique: true },
   division: String,
