@@ -1,4 +1,4 @@
-# Standing Component for ESPN.com NFL Team Page
+# Standings Component for ESPN.com NFL Team Page
 
 > The Standings Component will display the divisional teams’ W-L-T record, percentage,  as well as the points scored and points given up.  Client will be able to click to full standings which will redirect to the full NFL team standings Component (stretch milestone).
 
