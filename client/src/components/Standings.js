@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import mockTeamData from '../mockTeamData';
 
 export default class Standings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teams: mockTeamData,
+      teams: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('espn/find')
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({
+          teams: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -30,7 +42,7 @@ export default class Standings extends Component {
           </thead>
           <tbody>
             {nfcWestTeams.map(team => (
-              <tr key={team.id}>
+              <tr key={team._id}>
                 <th scope="row">{team.team_name}</th>
                 <th scope="row">{team.wins}</th>
                 <th scope="row">{team.losses}</th>
