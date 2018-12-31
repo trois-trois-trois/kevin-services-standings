@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.get('/espn/find', (req, res) => {
+app.get('/espn/teamstandings', (req, res) => {
   db.find({}, (err, data) => {
     if (err) {
       console.log(err);
