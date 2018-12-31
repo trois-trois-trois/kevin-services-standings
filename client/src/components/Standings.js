@@ -47,7 +47,7 @@ export default class Standings extends Component {
                 <th scope="row">{team.team_name}</th>
                 <th scope="row">{team.wins}</th>
                 <th scope="row">{team.losses}</th>
-                <th scope="row">0</th>
+                <th scope="row">{team.tie}</th>
                 <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
                 <th scope="row">{team.points_for}</th>
                 <th scope="row">{team.points_against}</th>
