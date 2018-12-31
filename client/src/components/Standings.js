@@ -10,7 +10,7 @@ export default class Standings extends Component {
   }
 
   componentDidMount() {
-    fetch('espn/find')
+    fetch('espn/teamstandings')
       .then(res => res.json())
       .then((data) => {
         this.setState({
