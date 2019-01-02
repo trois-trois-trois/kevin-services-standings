@@ -39,3 +39,24 @@ const Standings = (props) => {
 };
 
 export default Standings;
+
+//           </thead>
+//           <tbody>
+//             {nfcWestTeams.map(team => (
+//               <tr key={team._id}>
+//                 <th scope="row">{team.team_name}</th>
+//                 <th scope="row">{team.wins}</th>
+//                 <th scope="row">{team.losses}</th>
+//                 <th scope="row">{team.tie}</th>
+//                 <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
+//                 <th scope="row">{team.points_for}</th>
+//                 <th scope="row">{team.points_against}</th>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     );
+//   }
+// }
+// >>>>>>> master

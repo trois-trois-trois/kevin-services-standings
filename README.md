@@ -1,13 +1,11 @@
-# Project Name
+# Standings Component for ESPN.com NFL Team Page
 
-> Project description
+> The Standings Component will display the divisional teams’ W-L-T record, percentage,  as well as the points scored and points given up.  Client will be able to click to full standings which will redirect to the full NFL team standings Component (stretch milestone).
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/JKR-Hacks/joes-services-schedule
+  - https://github.com/JKR-Hacks/randy-services-stats
 
 ## Table of Contents
 
