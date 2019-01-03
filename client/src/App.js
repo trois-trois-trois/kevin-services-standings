@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Standings from './components/Standings';
 import Navigation from './components/Navigation';
+import Standings from './components/Standings';
+import FullStandings from './components/FullStandings';
 
 export default class App extends Component {
   constructor(props) {
@@ -27,8 +28,9 @@ export default class App extends Component {
     const { teams } = this.state;
     return (
       <div>
-        <Navigation />
+        <Navigation teams={teams} />
         <Standings teams={teams} />
+        <FullStandings teams={teams} />
       </div>
     );
   }
