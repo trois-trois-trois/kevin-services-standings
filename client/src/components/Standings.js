@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
 const Standings = (props) => {
-  const { teams } = props;
+  const { teams, handleClick } = props;
   const nfcWestTeams = teams.filter(team => team.division === 'NFC WEST').sort((a, b) => b.wins - a.wins);
 
   return (
@@ -23,7 +24,7 @@ const Standings = (props) => {
         <tbody>
           {nfcWestTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row"><a href={team.link}>{team.team_name}</a></th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -34,6 +35,7 @@ const Standings = (props) => {
           ))}
         </tbody>
       </table>
+      <button type="button" className="btn btn-link" onClick={handleClick}>Full Standings</button>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
@@ -34,7 +35,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -52,7 +53,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -70,7 +71,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -88,7 +89,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -106,7 +107,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -124,7 +125,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -142,7 +143,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
@@ -160,7 +161,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
-                {team.team_name}
+                <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
