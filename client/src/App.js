@@ -8,7 +8,10 @@ export default class App extends Component {
     super(props);
     this.state = {
       teams: [],
+      view: 'main',
     };
+    this.renderView = this.renderView.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -24,14 +27,37 @@ export default class App extends Component {
       });
   }
 
+  handleClick() {
+    const { view } = this.state;
+    this.setState({
+      view: 'fullstandings',
+    });
+  }
+
+  // eslint-disable-next-line consistent-return
+  renderView() {
+    const { view, teams } = this.state;
+    if (view === 'main') {
+      return (
+        <div id="main">
+          <Navigation teams={teams} />
+          <div id="main-standings">
+            <Standings teams={teams} handleClick={this.handleClick} />
+          </div>
+        </div>
+      );
+    } if (view === 'fullstandings') {
+      return (
+        <div id="full-standings">
+          <FullStandings teams={teams} />
+        </div>
+      );
+    }
+  }
+
   render() {
-    const { teams } = this.state;
     return (
-      <div>
-        <Navigation teams={teams} />
-        <Standings teams={teams} />
-        <FullStandings teams={teams} />
-      </div>
+      this.renderView()
     );
   }
 }

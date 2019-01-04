@@ -17,6 +17,8 @@ const standingsSchema = mongoose.Schema({
   percentage: Number,
   points_for: Number,
   points_against: Number,
+  team_logo: String,
+  link: String,
 });
 
 const Standings = mongoose.model('Standings', standingsSchema);
