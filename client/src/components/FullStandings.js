@@ -32,7 +32,10 @@ const FullStandings = (props) => {
           <h5>AFC EAST</h5>
           {afcEastTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -47,7 +50,10 @@ const FullStandings = (props) => {
           <h5>AFC NORTH</h5>
           {afcNorthTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -62,7 +68,10 @@ const FullStandings = (props) => {
           <h5>AFC SOUTH</h5>
           {afcSouthTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -77,7 +86,10 @@ const FullStandings = (props) => {
           <h5>AFC WEST</h5>
           {afcWestTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -92,7 +104,10 @@ const FullStandings = (props) => {
           <h5>NFC EAST</h5>
           {nfcEastTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -107,7 +122,10 @@ const FullStandings = (props) => {
           <h5>NFC NORTH</h5>
           {nfcNorthTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -122,7 +140,10 @@ const FullStandings = (props) => {
           <h5>NFC SOUTH</h5>
           {nfcSouthTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
@@ -137,7 +158,10 @@ const FullStandings = (props) => {
           <h5>NFC WEST</h5>
           {nfcWestTeams.map(team => (
             <tr key={team._id}>
-              <th scope="row">{team.team_name}</th>
+              <th scope="row">
+                <img src={team.team_logo} alt="logo" />
+                {team.team_name}
+              </th>
               <th scope="row">{team.wins}</th>
               <th scope="row">{team.losses}</th>
               <th scope="row">{team.tie}</th>
