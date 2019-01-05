@@ -43,7 +43,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -61,7 +61,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -79,7 +79,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -97,7 +97,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -115,7 +115,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -133,7 +133,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -151,7 +151,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
@@ -169,7 +169,7 @@ const FullStandings = (props) => {
               <th scope="row">{team.percentage.toFixed(3).slice(1)}</th>
               <th scope="row">{team.points_for}</th>
               <th scope="row">{team.points_against}</th>
-              <th scope="row">{team.points_for - team.points_against}</th>
+              <th scope="row" className={(team.points_for - team.points_against > 0 ? 'text-success' : 'text-danger')}>{team.points_for - team.points_against}</th>
             </tr>
           ))}
         </tbody>
