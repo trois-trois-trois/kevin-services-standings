@@ -51,7 +51,7 @@ const mockTeamData = [
     id: 16, team_name: 'Kansas City Chiefs', division: 'AFC WEST', wins: 13, losses: 3, tie: 0, percentage: 0.812, points_for: 516, points_against: 310, team_logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/kc.png&h=40&w=40', link: 'http://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs',
   },
   {
-    id: 17, team_name: 'Los Angeles Rams', division: 'NFC WEST', wins: 12, losses: 4, tie: 0, percentage: 0.750, points_for: 523, points_against: 319, team_logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/lar.png&h=40&w=40', link: 'http://www.espn.com/nfl/team/_/name/lar/los-angeles-rams',
+    id: 17, team_name: 'Los Angeles Rams', division: 'NFC WEST', wins: 12, losses: 4, tie: 0, percentage: 0.750, points_for: 523, points_against: 319, team_logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/lar.png&h=40&w=40', link: '/',
   },
   {
     id: 18, team_name: 'Miami Dolphins', division: 'AFC EAST', wins: 6, losses: 10, tie: 0, percentage: 0.375, points_for: 421, points_against: 516, team_logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/mia.png&h=40&w=40', link: 'http://www.espn.com/nfl/team/_/name/mia/miami-dolphins',
