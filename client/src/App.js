@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
 import Standings from './components/Standings';
 import FullStandings from './components/FullStandings';
 
@@ -41,7 +40,6 @@ export default class App extends Component {
     if (view === 'main') {
       return (
         <div id="main">
-          <Navigation teams={teams} />
           <div id="main-standings">
             <Standings teams={teams} handleClick={this.handleClick} />
           </div>
