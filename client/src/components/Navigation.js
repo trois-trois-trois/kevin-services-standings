@@ -11,9 +11,9 @@ const Navigation = (props) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/">
           <img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="logo" width="50px" />
-          <h3>LOS ANGELES RAMS</h3>
-          <button type="button" className="btn btn-outline-primary btn-sm">Follow</button>
         </a>
+        <h3>LOS ANGELES RAMS</h3>
+        <button type="button" className="btn btn-outline-primary btn-sm">Follow</button>
         {nfcWestTeams.map(team => (
           <h6 key={team._id}>
             {team.wins}
