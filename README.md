@@ -40,3 +40,5 @@ npm install
 - Start server: npm run server
 - Start webpack: npm run react
 - Seed database with sample data: npm run seed
+- Start tests: npm run test
+
