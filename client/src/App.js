@@ -1,5 +1,8 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import Standings from './components/Standings';
 import FullStandings from './components/FullStandings';
 
@@ -15,9 +18,9 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch('espn/teamstandings')
-      .then(res => res.json())
-      .then((data) => {
+    axios.get('espn/teamstandings')
+      .then((res) => {
+        const data = res.data;
         this.setState({
           teams: data,
         });
@@ -39,15 +42,13 @@ export default class App extends Component {
     const { view, teams } = this.state;
     if (view === 'main') {
       return (
-        <div id="main">
-          <div id="main-standings">
-            <Standings teams={teams} handleClick={this.handleClick} />
-          </div>
+        <div id="mainstandings">
+          <Standings teams={teams} handleClick={this.handleClick} />
         </div>
       );
     } if (view === 'fullstandings') {
       return (
-        <div id="full-standings">
+        <div id="fullstandings">
           <FullStandings teams={teams} />
         </div>
       );

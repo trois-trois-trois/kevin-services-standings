@@ -5,8 +5,9 @@ import {
   mount, render, shallow, configure,
 } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
-import { createSerializer } from 'enzyme-to-json';
+import { createSerializer, toJson } from 'enzyme-to-json';
 import fetch from 'node-fetch';
+import renderer from 'react-test-renderer';
 
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
 configure({ adapter: new Adapter() });
@@ -17,3 +18,5 @@ global.mount = mount;
 global.render = render;
 global.shallow = shallow;
 global.fetch = fetch;
+global.renderer = renderer;
+global.toJson = toJson;

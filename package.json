@@ -9,7 +9,7 @@
     "seed": "node database/seed.js",
     "test": "jest"
   },
-  "author": "Beth Johnson",
+  "author": "Kevin Phung",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.18.0",
