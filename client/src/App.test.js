@@ -48,7 +48,7 @@ describe('FullStandings component', () => {
 });
 
 describe('Make successful API call to database', () => {
-  it('Should fetch /espn/teamstandings', () => {
+  it('Should fetch via axios /espn/teamstandings', () => {
     const spy = jest.spyOn(App.prototype, 'componentDidMount');
     const wrapper = mount(<App />);
     wrapper.instance().componentDidMount(axios.get('/espn/teamstandings'));
