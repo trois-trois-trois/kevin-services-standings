@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 import Standings from './components/Standings';
 import FullStandings from './components/FullStandings';
 
