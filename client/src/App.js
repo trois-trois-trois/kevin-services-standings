@@ -18,7 +18,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('espn/teamstandings')
+    axios.get('http://localhost:4000/espn/teamstandings')
       .then((res) => {
         const data = res.data;
         this.setState({

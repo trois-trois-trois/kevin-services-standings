@@ -35,6 +35,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -53,6 +54,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -71,6 +73,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -89,6 +92,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -107,6 +111,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -125,6 +130,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -143,6 +149,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
@@ -161,6 +168,7 @@ const FullStandings = (props) => {
             <tr key={team._id}>
               <th scope="row">
                 <img src={team.team_logo} alt="logo" />
+                {' '}
                 <a href={team.link}>{team.team_name}</a>
               </th>
               <th scope="row">{team.wins}</th>
