@@ -7,12 +7,12 @@ const Standings = (props) => {
   const nfcWestTeams = teams.filter(team => team.division === 'NFC WEST').sort((a, b) => b.wins - a.wins);
 
   return (
-    <div className="container-fluid">
-      <h5>2018 NFC West Standings</h5>
-      <table className="table table-striped table-hover table-sm rounded">
+    <div className="col-md">
+      <p className="h5 text-dark font-weight-bold">2019 NFC West Standings</p>
+      <table className="table table-hover table-sm rounded" style={{ width: 30, height: 30 }}>
         <thead>
           <tr>
-            <th scope="col">Team</th>
+            <th scope="col">TEAM</th>
             <th scope="col">W</th>
             <th scope="col">L</th>
             <th scope="col">T</th>
