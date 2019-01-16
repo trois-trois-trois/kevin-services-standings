@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import axios from 'axios';
+import dbCall from '../../config/key';
 
 import Standings from './components/Standings';
 import FullStandings from './components/FullStandings';
@@ -18,7 +19,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/espn/teamstandings')
+    axios.get('/espn/teamstandings',
+      {
+        method: 'GET',
+        mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+      })
       .then((res) => {
         const data = res.data;
         this.setState({
