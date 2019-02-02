@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const onlineDb = require('../config/key');
+// const onlineDb = require('../config/key');
 
-mongoose.connect(onlineDb.mongoURI, { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/espn');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
