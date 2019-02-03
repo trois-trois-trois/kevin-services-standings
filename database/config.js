@@ -2,7 +2,7 @@ const knex = require('knex')({
   client: 'pg',
   connection: {
     host: '127.0.0.1',
-    user: 'fluffly',
+    user: 'fluffy',
     password: 'troiscubed',
     database: 'espn',
   },
@@ -19,12 +19,13 @@ db.knex.schema.hasTable('standings').then((exists) => {
       table.integer('wins');
       table.integer('losses');
       table.integer('tie');
-      table.integer('percentage');
+      table.decimal('percentage');
       table.integer('points_for');
+      table.integer('points_against');
       table.string('team_logo', 255);
       table.string('link', 255);
     }).then((table) => {
-      console.log('Created Table: ', table);
+      console.log('Created Table Standings: ', table);
     });
   }
 });

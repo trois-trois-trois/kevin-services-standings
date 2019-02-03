@@ -3,7 +3,7 @@ module.exports = {
     client: 'pg',
     connection: {
       host: '127.0.0.1',
-      user: 'fluffly',
+      user: 'fluffy',
       password: 'troiscubed',
       database: 'espn',
     },
@@ -15,8 +15,8 @@ module.exports = {
     client: 'pg',
     connection: {
       host: '127.0.0.1',
-      user: 'taco',
-      password: 'tuesday',
+      user: 'fluffy',
+      password: 'troiscubed',
       database: 'espn',
     },
     seeds: {

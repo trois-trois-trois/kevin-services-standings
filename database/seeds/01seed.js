@@ -97,7 +97,5 @@ const mockTeamData = [
   },
 ];
 
-exports.seed = ((knex) => {
-  knex('standings').del()
-    .then(() => knex('standings').insert(mockTeamData));
-});
+exports.seed = (knex, Promise) => knex('standings').del()
+  .then(() => knex('standings').insert(mockTeamData));
