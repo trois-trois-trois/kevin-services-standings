@@ -2,6 +2,7 @@ node_modules
 client/dist/bundle.js
 config
 database/mongodb
+database/_mongodb
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
