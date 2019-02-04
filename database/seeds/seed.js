@@ -31,4 +31,4 @@ const generateDataSet = (numOfRecords) => {
 };
 
 exports.seed = knex => knex('standings').del()
-  .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000));
+  .then(() => knex.batchInsert('standings', generateDataSet(10000000), 1000));
