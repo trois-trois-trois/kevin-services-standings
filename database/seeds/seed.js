@@ -8,20 +8,57 @@ const getRandomDivision = () => {
   return `${division[getRandomInt(division.length)]} ${compass[getRandomInt(compass.length)]}`;
 };
 
+const getRandomTeamLogo = () => {
+  const logos = [
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/ari.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/atl.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/bal.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/buf.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/car.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/chi.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/cin.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/cle.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/dal.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/den.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/det.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/gb.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/hou.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/ind.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/jax.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/kc.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/lar.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/mia.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/min.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/ne.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/no.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/nyg.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/nyj.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/oak.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/phi.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/pit.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/lac.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/sf.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/sea.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/tb.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/ten.png&h=40&w=40',
+    'https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/scoreboard/wsh.png&h=40&w=40',
+  ];
+  return logos[getRandomInt(logos.length)];
+};
+
 const generateDataSet = (numOfRecords) => {
   const acc = [];
   for (let i = 0; i < numOfRecords; i++) {
     const team = {
-      id: i,
       team_name: `${faker.address.city()} ${faker.random.word()}`,
       division: getRandomDivision(),
-      wins: faker.random.number(),
-      losses: faker.random.number(),
-      tie: faker.random.number(),
+      wins: getRandomInt(20),
+      losses: getRandomInt(20),
+      tie: getRandomInt(5),
       percentage: Math.random(),
       points_for: faker.random.number(),
       points_against: faker.random.number(),
-      team_logo: faker.image.avatar(),
+      team_logo: getRandomTeamLogo(),
       link: 'https://www.youtube.com/watch?v=Fg9IjJSSMRQ',
     };
     console.log('Saved record: ', i);
@@ -31,4 +68,13 @@ const generateDataSet = (numOfRecords) => {
 };
 
 exports.seed = knex => knex('standings').del()
-  .then(() => knex.batchInsert('standings', generateDataSet(10000000), 1000));
+  .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000)
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000)));
