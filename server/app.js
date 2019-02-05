@@ -11,6 +11,10 @@ app.use(express.static(`${__dirname}/../client/dist`));
 
 app.get('/espn/teamstandings', (req, res) => {
   Standings.reset()
+    .orderBy('id', 'DESC')
+    .query((qb) => {
+      qb.limit(100);
+    })
     .fetch()
     .then((data) => {
       res.status(200).send(data.models);
