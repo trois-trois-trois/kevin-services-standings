@@ -61,11 +61,12 @@ const generateDataSet = (numOfRecords) => {
       team_logo: getRandomTeamLogo(),
       link: 'https://www.youtube.com/watch?v=Fg9IjJSSMRQ',
     };
-    console.log('Saved record: ', i);
     acc.push(team);
   }
   return acc;
 };
+
+const startTime = new Date().getTime();
 
 exports.seed = knex => knex('standings').del()
   .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000)
@@ -77,4 +78,5 @@ exports.seed = knex => knex('standings').del()
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
     .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
-    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000)));
+    .then(() => knex.batchInsert('standings', generateDataSet(1000000), 1000))
+    .then(() => console.log('10m insertions took ', new Date().getTime() - startTime, 'ms')));
