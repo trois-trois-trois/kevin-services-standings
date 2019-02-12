@@ -7,7 +7,7 @@
     "react": "webpack -d --watch",
     "server": "nodemon server/index.js rs",
     "start": "node server/index.js rs",
-    "seed": "knex seed:run",
+    "seed": "node database/seeds/nosqlseed.js",
     "test": "jest"
   },
   "author": "Kevin Phung",
@@ -21,6 +21,7 @@
     "babel-preset-react": "^6.23.0",
     "body-parser": "^1.18.3",
     "bookshelf": "^0.14.2",
+    "cassandra-driver": "^4.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-15": "^1.2.0",
     "enzyme-to-json": "^3.3.5",
