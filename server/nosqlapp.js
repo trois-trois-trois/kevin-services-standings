@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(`${__dirname}/../client/dist`));
 
-const getStandings = ('SELECT * FROM espn.standings');
+const getStandings = ('SELECT * FROM espn.standings limit 100');
 
 app.get('/espn/teamstandings', (req, res) => {
   db.execute(getStandings, [], (err, data) => {

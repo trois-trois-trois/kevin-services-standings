@@ -1,7 +1,6 @@
 const faker = require('faker');
+const uuid = require('uuid');
 const db = require('../nosqlconfig.js');
-
-const startTime = new Date().getTime();
 
 const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 
@@ -49,30 +48,202 @@ const getRandomTeamLogo = () => {
   return logos[getRandomInt(logos.length)];
 };
 
-const generateDataSet = (firstID, numOfRecords) => {
-  const acc = [];
-  for (let i = firstID; i <= numOfRecords; i++) {
-    const team = {
-      query: 'INSERT INTO espn.standings (id,division,link,losses,percentage,points_against,points_for,team_logo,team_name,tie,wins) VALUES (?,?,?,?,?,?,?,?,?,?,?)',
-      params: [
-        i,
-        getRandomDivision(),
-        'https://www.youtube.com/watch?v=Fg9IjJSSMRQ',
-        getRandomInt(20),
-        Math.random(),
-        faker.random.number(),
-        faker.random.number(),
-        getRandomTeamLogo(),
-        `${faker.address.city()} ${faker.random.word()}`,
-        getRandomInt(5),
-        getRandomInt(20)
-        ]
-    };
-    acc.push(team);
-  }
-  return acc;
+const query = 'INSERT INTO espn.standings (uid,division,link,losses,percentage,points_against,points_for,team_logo,team_name,tie,wins) VALUES (?,?,?,?,?,?,?,?,?,?,?)';
+
+const generateRecord = () => {
+    const params = [
+      uuid(),
+      getRandomDivision(),
+      'https://www.youtube.com/watch?v=Fg9IjJSSMRQ',
+      getRandomInt(20),
+      Math.random(),
+      faker.random.number(),
+      faker.random.number(),
+      getRandomTeamLogo(),
+      `${faker.address.city()} ${faker.random.word()}`,
+      getRandomInt(5),
+      getRandomInt(20)
+    ];
+    return params;
 };
 
-db.batch(generateDataSet(1, 32), { prepare: true }).then(result => console.log('Inserted record'));
+const generateBatch = (numOfRecords) => {
+  let queries = [];
+  for (var i = 0; i < 125; i++) {
+    let insertQuery = {
+      query: query,
+      params: generateRecord(),
+    }
+    queries.push(insertQuery);
+  }
+  return queries;
+};
 
-// console.log('1 insertion took ', new Date().getTime() - startTime, 'ms');
+const insertBulkBatch = () => {
+  const startTime = new Date().getTime();
+  for (var i = 0; i < 500; i++) {
+    db.batch(generateBatch(), { prepare: true })
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 || 10,000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 1500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 2500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 3500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4000
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 4500
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true}))
+    .then( ()=> db.batch(generateBatch(), { prepare: true})) // 5000 || 10,000
+    .then(() => console.log(`Successfully inserted 20,000 records in ${new Date().getTime() - startTime}ms`));
+  }
+};
+
+insertBulkBatch();
