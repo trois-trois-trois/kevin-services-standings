@@ -1,7 +1,5 @@
 ## GET '/espn/teamstandings'
 
----
-
 - Request received when status code ``200`` is given
 - Will grab the last 100 records from the DBMS
 - Renders all 100 records to the DOM
@@ -23,8 +21,6 @@ app.get('/espn/teamstandings', (req, res) => {
 ---
 
 ## POST '/espn/teamstandings'
-
----
 
 - Request status code ``201`` is given
 - Will add a dummy record to the database and render it to the DOM
@@ -49,8 +45,6 @@ app.post('/espn/teamstandings', (req, res) => {
 ---
 
 ## PUT '/espn/teamstandings'
-
----
 
 - Updates the dummy record inserted by the ``POST`` route
 - Request status code ``303`` is given
@@ -79,3 +73,5 @@ app.delete('/espn/teamstandings', (req, res) => {
     .then(() => res.status(303).send('1 team deleted'));
 });
 ```
+
+---
