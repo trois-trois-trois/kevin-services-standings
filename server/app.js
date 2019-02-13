@@ -21,4 +21,16 @@ app.get('/espn/teamstandings', (req, res) => {
     });
 });
 
+app.post('/add-team', (req, res) => {
+
+});
+
+app.put('/update-team', (req, res) => {
+
+});
+
+app.delete('/delete-team', (req, res) => {
+
+});
+
 module.exports = app;
