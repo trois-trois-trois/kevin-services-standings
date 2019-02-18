@@ -1,14 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const Standings = require('../database/collections/standings.js');
-const db = require('../database/config.js');
-const app = express();
+## GET '/espn/teamstandings'
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(`${__dirname}/../client/dist`));
+- Request received when status code ``200`` is given
+- Will grab the last 100 records from the DBMS
+- Renders all 100 records to the DOM
 
+```
 app.get('/espn/teamstandings', (req, res) => {
   Standings.reset()
     .orderBy('id', 'DESC')
@@ -20,7 +16,16 @@ app.get('/espn/teamstandings', (req, res) => {
       res.status(200).send(data.models);
     });
 });
+```
 
+---
+
+## POST '/espn/teamstandings'
+
+- Request status code ``201`` is given
+- Will add a dummy record to the database and render it to the DOM
+
+```
 app.post('/espn/teamstandings', (req, res) => {
   db.knex('standings').insert({
     team_name: 'The Flying Dutchmen',
@@ -35,19 +40,38 @@ app.post('/espn/teamstandings', (req, res) => {
     link: 'https://www.youtube.com/watch?v=WpE_xMRiCLE&t=0s&list=FLI_MZWTHPVBrsOofhX5Ceug&index=86'
   }).then(() => res.status(201).send('Successfully inserted team'));
 });
+```
 
+---
+
+## PUT '/espn/teamstandings'
+
+- Updates the dummy record inserted by the ``POST`` route
+- Request status code ``303`` is given
+
+```
 app.put('/espn/teamstandings', (req, res) => {
   db.knex('standings')
     .where({team_name: 'The Flying Dutchmen'})
     .update({team_name: 'Mars Rovers'})
     .then(() => res.status(303).send('Updated team'));
 });
+```
 
+---
+
+## DELETE '/espn/teamstandings'
+
+- Deletes the dummy record inserted by the ``POST`` route
+- Request status code ``303`` is given
+
+```
 app.delete('/espn/teamstandings', (req, res) => {
   db.knex('standings')
     .where({link: 'https://www.youtube.com/watch?v=WpE_xMRiCLE&t=0s&list=FLI_MZWTHPVBrsOofhX5Ceug&index=86'})
     .del()
     .then(() => res.status(303).send('1 team deleted'));
 });
+```
 
-module.exports = app;
+---

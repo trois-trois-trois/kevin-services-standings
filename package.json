@@ -6,7 +6,7 @@
   "scripts": {
     "react": "webpack -d --watch",
     "server": "nodemon server/index.js rs",
-    "start": "node server/index.js rs",
+    "start": "nodemon server/index.js",
     "seed": "knex seed:run",
     "test": "jest"
   },
