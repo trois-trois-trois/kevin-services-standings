@@ -2,7 +2,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
+      host: 'ec2-34-217-108-173.us-west-2.compute.amazonaws.com',
       user: 'fluffy',
       password: 'troiscubed',
       database: 'espn',
@@ -14,7 +14,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
+      host: 'ec2-34-217-108-173.us-west-2.compute.amazonaws.com',
       user: 'fluffy',
       password: 'troiscubed',
       database: 'espn',
