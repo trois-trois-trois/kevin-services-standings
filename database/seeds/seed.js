@@ -52,8 +52,8 @@ const generateDataSet = (numOfRecords) => {
     const team = {
       team_name: `${faker.address.city()} ${faker.random.word()}`,
       division: getRandomDivision(),
-      wins: getRandomInt(12),
-      losses: getRandomInt(12),
+      wins: 12,
+      losses: 5,
       tie: 0,
       percentage: .31415,
       points_for: 42,
