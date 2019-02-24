@@ -52,12 +52,12 @@ const generateDataSet = (numOfRecords) => {
     const team = {
       team_name: `${faker.address.city()} ${faker.random.word()}`,
       division: getRandomDivision(),
-      wins: getRandomInt(20),
-      losses: getRandomInt(20),
-      tie: getRandomInt(5),
-      percentage: Math.random(),
-      points_for: faker.random.number(),
-      points_against: faker.random.number(),
+      wins: getRandomInt(12),
+      losses: getRandomInt(12),
+      tie: 0,
+      percentage: .31415,
+      points_for: 42,
+      points_against: 42,
       team_logo: getRandomTeamLogo(),
       link: 'https://www.youtube.com/watch?v=Fg9IjJSSMRQ',
     };
