@@ -66,27 +66,24 @@ const generateDataSet = (numOfRecords) => {
   return acc;
 };
 
-const startTime = new Date().getTime();
-
-exports.seed = knex => knex('standings').del()
-  .then(() => knex.batchInsert('standings', generateDataSet(500000), 100)
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(500000), 100)) // 20
-    .then(() => console.log('10m insertions on ec2 took ', new Date().getTime() - startTime, 'ms')));
+exports.seed = knex => {
+  knex('standings').del();
+  let count = 0;
+  const startTime = new Date().getTime();
+  for (var i = 1; i <= 100; i++) {
+    knex.batchInsert('standings', generateDataSet(10000), 100)
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
+    .then(() => {
+      count++;
+      if (count === 100) console.log('10m insertions on ec2 took ', new Date().getTime() - startTime, 'ms');
+    });
+  }
+}
