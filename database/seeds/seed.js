@@ -52,8 +52,8 @@ const generateDataSet = (numOfRecords) => {
     const team = {
       team_name: `${faker.address.city()} ${faker.random.word()}`,
       division: getRandomDivision(),
-      wins: 12,
-      losses: 5,
+      wins: getRandomInt(12),
+      losses: getRandomInt(12),
       tie: 0,
       percentage: .31415,
       points_for: 42,
@@ -66,23 +66,108 @@ const generateDataSet = (numOfRecords) => {
   return acc;
 };
 
-exports.seed = knex => {
-  let count = 0;
-  const startTime = new Date().getTime();
-  for (var i = 1; i <= 100; i++) {
-    knex.batchInsert('standings', generateDataSet(10000), 100)
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => knex.batchInsert('standings', generateDataSet(10000), 100))
-    .then(() => {
-      count++;
-      if (count === 100) console.log('10m insertions on ec2 took ', new Date().getTime() - startTime, 'ms');
-    });
-  }
-}
+let example = generateDataSet(100000);
+
+const startTime = new Date().getTime();
+
+exports.seed = knex => knex.batchInsert('standings', example, 1000)
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000))
+  .then(() => knex.batchInsert('standings', example, 1000)) // 1m
+  .then(() => console.log('10m insertions on ec2 took ', new Date().getTime() - startTime, 'ms'));
