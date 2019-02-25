@@ -67,7 +67,6 @@ const generateDataSet = (numOfRecords) => {
 };
 
 exports.seed = knex => {
-  knex('standings').del();
   let count = 0;
   const startTime = new Date().getTime();
   for (var i = 1; i <= 100; i++) {
