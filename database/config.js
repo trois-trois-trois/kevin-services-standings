@@ -1,10 +1,10 @@
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     user: 'fluffy',
     password: 'troiscubed',
-    database: 'espn',
+    database: 'espndev',
   },
 });
 

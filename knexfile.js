@@ -2,10 +2,10 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
+      host: '0.0.0.0',
       user: 'fluffy',
       password: 'troiscubed',
-      database: 'espn',
+      database: 'espndev',
     },
     seeds: {
       directory: './database/seeds',
@@ -14,7 +14,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
+      host: '0.0.0.0',
       user: 'fluffy',
       password: 'troiscubed',
       database: 'espn',
