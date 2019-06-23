@@ -15,7 +15,7 @@
 
 ## Usage
 
-> Some usage instructions
+> To understand how to create a sports team standings module for ESPN with over 10 million records. This repo will render a standings module to the DOM. When clicked the full standings for the entire NFL division can be seen.
 
 ## Requirements
 
@@ -40,5 +40,6 @@ npm install
 - Start server: npm run server
 - Start webpack: npm run react
 - Seed database with sample data: npm run seed
+  - NOTE: This will create 10,000,000 records in the database but only 100 will be rendered to the DOM.
 - Start tests: npm run test
 
